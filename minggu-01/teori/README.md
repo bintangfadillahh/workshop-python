@@ -45,7 +45,22 @@
   900
   ```
 
+  > Dalam mode interaktif, ekspresi tercetak terakhir ditugaskan ke variabel \_ . Ini berarti ketika Anda menggunakan Python sebagai kalkulator, akan lebih mudah untuk melanjutkan perhitungan, misalnya:
+
+  ```
+  >>> tax = 12.5 / 100
+  >>> price = 100.50
+  >>> price * tax
+  12.5625
+  >>> price + _
+  113.0625
+  >>> round(_, 2)
+  113.06
+  ```
+
 - 3.1.2 String
+
+  >
 
   ```
   'spam eggs'  # single quotes
