@@ -217,7 +217,7 @@ match point:
 > Jika Anda menggunakan class untuk menyusun data, Anda dapat menggunakan nama kelas diikuti dengan daftar argumen yang menyerupai konstruktor, tetapi dengan kemampuan untuk menangkap atribut ke dalam variabel:
 
 ```Python
-class Point:
+7/-class Point:
     x: int
     y: int
 
