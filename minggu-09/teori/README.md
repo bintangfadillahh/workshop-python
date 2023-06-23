@@ -67,8 +67,130 @@ python -m pip uninstall diikuti oleh satu atau lebih nama paket akan menghapus p
 
 python -m pip show akan menampilkan informasi tentang paket tertentu
 
+```
+(tutorial-env) $ python -m pip show requests
+---
+Metadata-Version: 2.0
+Name: requests
+Version: 2.7.0
+Summary: Python HTTP for Humans.
+Home-page: http://python-requests.org
+Author: Kenneth Reitz
+Author-email: me@kennethreitz.com
+License: Apache 2.0
+Location: /Users/akuchling/envs/tutorial-env/lib/python3.4/site-packages
+Requires:
+```
+
 python -m pip list akan menampilkan semua paket yang diinstal di lingkungan virtual
+
+```
+(tutorial-env) $ python -m pip list
+novas (3.1.1.3)
+numpy (1.9.2)
+pip (7.0.3)
+requests (2.7.0)
+setuptools (16.0)
+```
 
 python -m pip freeze akan menghasilkan daftar serupa dari paket yang diinstal, tetapi hasilnya menggunakan format yang diharapkan oleh python -m pip install. Konvensi umum adalah meletakkan daftar ini di file requirements.txt
 
+```
+(tutorial-env) $ python -m pip freeze > requirements.txt
+(tutorial-env) $ cat requirements.txt
+novas==3.1.1.3
+numpy==1.9.2
+requests==2.7.0
+```
+
 Requirement.txt kemudian dapat dikomit ke kontrol versi dan dikirimkan sebagai bagian dari aplikasi. Pengguna kemudian dapat menginstal semua paket yang diperlukan dengan install -r
+
+```
+(tutorial-env) $ python -m pip install -r requirements.txt
+Collecting novas==3.1.1.3 (from -r requirements.txt (line 1))
+  ...
+Collecting numpy==1.9.2 (from -r requirements.txt (line 2))
+  ...
+Collecting requests==2.7.0 (from -r requirements.txt (line 3))
+  ...
+Installing collected packages: novas, numpy, requests
+  Running setup.py install for novas
+Successfully installed novas-3.1.1.3 numpy-1.9.2 requests-2.7.0
+```
+
+## Getting Started with Conda
+
+### Managing Conda
+
+Verifikasi bahwa conda diinstal dan dijalankan di sistem Anda dengan mengetik:
+
+```
+conda --version
+```
+
+Perbarui conda ke versi saat ini. Ketik berikut ini:
+
+```
+conda update conda
+```
+
+Conda membandingkan versi dan kemudian menampilkan apa yang tersedia untuk diinstal.
+
+Jika versi conda yang lebih baru tersedia, ketik y untuk memperbarui:
+
+```
+Proceed ([y]/n)? y
+```
+
+### Managing Environment
+
+Buat lingkungan baru dan instal paket di dalamnya.
+
+Kami akan memberi nama kepingan salju lingkungan dan menginstal paket BioPython. Di Anaconda Prompt atau di jendela terminal Anda, ketik berikut ini:
+
+```
+conda create --name snowflakes biopython
+```
+
+Untuk melihat daftar semua lingkungan Anda, ketik:
+
+```
+conda info --envs
+```
+
+Daftar lingkungan muncul, mirip dengan berikut ini:
+
+```
+conda environments:
+
+    base           /home/username/Anaconda3
+    snowflakes   * /home/username/Anaconda3/envs/snowflakes
+```
+
+### Managing python
+
+Buat lingkungan baru bernama "ular" yang berisi Python 3.9:
+
+```
+conda create --name snakes python=3.9
+```
+
+### Managing packages
+
+Untuk menemukan paket yang telah Anda instal, aktifkan terlebih dahulu lingkungan yang ingin Anda cari. Lihat di atas untuk perintah untuk mengaktifkan lingkungan ular Anda.
+
+Periksa untuk melihat apakah paket yang belum Anda instal bernama "beautifulsoup4" tersedia dari repositori Anaconda (harus terhubung ke Internet):
+
+Instal paket ini ke lingkungan saat ini:
+
+```
+conda search beautifulsoup4
+
+conda install beautifulsoup4
+```
+
+Untuk menampilkan list yang terinstall :
+
+```
+conda list
+```
