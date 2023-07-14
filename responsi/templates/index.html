@@ -1,0 +1,19 @@
+{% block content%}
+<table id="data" border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nama</th>
+      <th>Email</th>
+      <th>No Handphone</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+    <tr>
+      <td>{{ user.name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
