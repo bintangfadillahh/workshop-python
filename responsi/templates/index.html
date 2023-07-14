@@ -1,8 +1,7 @@
-{% block content%}
-<table id="data" border="1">
+{% block content %}
+<table border="1">
   <thead>
     <tr>
-      <th>Id</th>
       <th>Nama</th>
       <th>Email</th>
       <th>No Handphone</th>
@@ -12,6 +11,8 @@
     {% for user in users %}
     <tr>
       <td>{{ user.name }}</td>
+      <td>{{ user.email}}</td>
+      <td>{{ user.phone_number}}</td>
     </tr>
     {% endfor %}
   </tbody>
