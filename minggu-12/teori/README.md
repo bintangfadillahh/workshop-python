@@ -25,19 +25,19 @@ Berikut beberapa metode objek list :
 - list.**copy**()
   > Mengembalikan nilai copy dari list
 
-![Alt text](../../minggu-12/img/1.png)
+![Alt text](../img/1.png)
 
 ### 5.1.1 Using list as Stacks
 
 Metode list membuatnya sangat mudah untuk menggunakan list sebagai tumpukan, di mana elemen terakhir yang ditambahkan adalah elemen pertama yang diambil (“last-in, first-out”). Untuk menambahkan item ke bagian atas tumpukan, gunakan append(). Untuk mengambil item dari atas tumpukan, gunakan pop() tanpa indeks eksplisit. Misalnya:
 
-![Alt text](../../minggu-12/img/2.png)
+![Alt text](../img/2.png)
 
 ### 5.1.2 Using Lists as Queues
 
 Dimungkinkan juga untuk menggunakan list sebagai antrian, di mana elemen pertama yang ditambahkan adalah elemen pertama yang diambil (“first-in, first-out”); namun, list tidak efisien untuk tujuan ini. Sementara menambahkan dan muncul dari akhir list terbilang cepat, melakukan sisipan atau muncul dari awal list terbilang lambat
 
-![Alt text](../../minggu-12/img/3.png)
+![Alt text](../img/3.png)
 
 ### 5.1.3 List Comprehensions
 
@@ -45,7 +45,7 @@ Pemahaman list menyediakan cara ringkas untuk membuat list. Aplikasi umum adalah
 
 Sebagai contoh, asumsikan kita ingin membuat list kuadrat :
 
-![Alt text](../../minggu-12/img/4.png)
+![Alt text](../img/4.png)
 
 Perlu diingat bahwa ini membuat (atau menimpa) sebuah variabel bernama x yang masih ada saat loop selesai. Kita dapat menghitung kuadrat tanpa efek samping menggunakan :
 
@@ -67,7 +67,7 @@ Ekspresi awal dalam pemahaman list dapat berupa sembarang ekspresi, termasuk pem
 
 Pertimbangkan contoh matriks 3x4 berikut yang diimplementasikan sebagai list :
 
-![Alt text](../../minggu-12/img/5.png)
+![Alt text](../img/5.png)
 
 List comprehension berikut akan transpose row dan column :
 
@@ -113,7 +113,7 @@ Di dunia nyata, Anda harus memilih fungsi bawaan daripada pernyataan alur yang k
 
 Ada cara untuk menghapus item dari list yang diberikan indeksnya alih-alih nilainya: pernyataan del. Ini berbeda dari metode pop() yang mengembalikan nilai. Pernyataan del juga dapat digunakan untuk menghapus irisan dari list atau menghapus seluruh list (yang kita lakukan sebelumnya dengan menugaskan daftar kosong ke irisan). Misalnya:
 
-![Alt text](../../minggu-12/img/6.png)
+![Alt text](../img/6.png)
 
 **del** juga bisa digunakan untuk menghapus seluruh variabel :
 
@@ -165,7 +165,7 @@ Masalah khusus adalah pembuatan tupel yang berisi 0 atau 1 item: sintaks memilik
 
 Python juga menyertakan tipe data untuk set. Himpunan adalah koleksi tak terurut tanpa elemen duplikat. Penggunaan dasar termasuk pengujian keanggotaan dan menghilangkan entri duplikat. Set objek juga mendukung operasi matematika seperti penyatuan, persimpangan, perbedaan, dan perbedaan simetris
 
-![Alt text](../../minggu-12/img/7.png)
+![Alt text](../img/7.png)
 
 Seperti list comprehension, set comprehension juga dapat melakukan :
 
@@ -181,7 +181,7 @@ Tipe data built-in berguna lainnya yaitu dictionaries. Dictionaries kadang-kadan
 
 Berikut contoh menggunakan dictionaries :
 
-![Alt text](../../minggu-12/img/8.png)
+![Alt text](../img/8.png)
 
 **dict()** constructor membangun dictionaries langsung dari sequence dari key-value pairs :
 
@@ -209,93 +209,31 @@ Saat keys berupa string sederhana, terkadang lebih mudah untuk menentukan pasang
 
 Saat looping melalui dictionaris, key dan nilai yang sesuai dapat diambil pada saat yang sama menggunakan metode items().
 
-```Python
->>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
->>> for k, v in knights.items():
-...    print(k, v)
-
-gallahad the pure
-robin the brave
-```
+![Alt text](../img/9.png)
 
 Saat mengulang urutan, indeks posisi dan nilai terkait dapat diambil pada saat yang sama menggunakan fungsi enumerate().
 
-```Python
->>> for i, v in enumerate(['tic', 'tac', 'toe']):
-...    print(i, v)
-...
-0 tic
-1 tac
-2 toe
-```
+![Alt text](../img/10.png)
 
 Untuk mengulangi dua urutan atau lebih pada saat yang sama, entri dapat dipasangkan dengan fungsi zip().
 
-```Python
->>> questions = ['name', 'quest', 'favorite color']
->>> answers = ['lancelot', 'the holy grail', 'blue']
->>> for q, a in zip(questions, answers):
-...    print('What is your {0}?  It is {1}.'.format(q, a))
-...
-What is your name?  It is lancelot.
-What is your quest?  It is the holy grail.
-What is your favorite color?  It is blue.
-```
+![Alt text](../img/11.png)
 
 Untuk mengulangi urutan secara terbalik, pertama tentukan urutan dalam arah maju dan kemudian panggil fungsi reversed().
 
-```Python
->>> for i in reversed(range(1, 10, 2)):
-...    print(i)
-...
-9
-7
-5
-3
-1
-```
+![Alt text](../img/12.png)
 
 Untuk mengulangi urutan dalam urutan terurut, gunakan fungsi sorted() yang mengembalikan daftar terurut baru sambil membiarkan sumbernya tidak berubah.
 
-```Python
->>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
->>> for i in sorted(basket):
-...    print(i)
-...
-apple
-apple
-banana
-orange
-orange
-pear
-```
+![Alt text](../img/13.png)
 
 Menggunakan set() pada urutan menghilangkan elemen duplikat. Penggunaan sortir() dalam kombinasi dengan set() di atas urutan adalah cara idiomatis untuk mengulang elemen unik dari urutan dalam urutan terurut.
 
-```Python
->>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
->>> for f in sorted(set(basket)):
-...    print(f)
-...
-apple
-banana
-orange
-pear
-```
+![Alt text](../img/14.png)
 
 Terkadang tergoda untuk mengubah daftar saat Anda mengulanginya; namun, seringkali lebih mudah dan lebih aman untuk membuat daftar baru.
 
-```Python
->>> import math
->>> raw_data = [56.2, float('NaN'), 51.7, 55.3, 52.5, float('NaN'), 47.8]
->>> filtered_data = []
->>> for value in raw_data:
-...    if not math.isnan(value):
-...        filtered_data.append(value)
-...
->>> filtered_data
-[56.2, 51.7, 55.3, 52.5, 47.8]
-```
+![Alt text](../img/15.png)
 
 ## 5.7 More on Conditions
 
